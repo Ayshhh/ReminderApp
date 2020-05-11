@@ -1,0 +1,39 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             
+             x:Class="Reminder.MainPage">
+
+    <StackLayout>
+        <Entry x:Name="EHeader" Placeholder="Add reminder" />
+        <Entry x:Name="EDiscription" Placeholder="Add description" />
+        <ListView x:Name="Reminder">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label
+                                Grid.Row="0"
+                                Text="{Binding Header}" 
+                                TextColor="Black"
+                                HorizontalTextAlignment="Start" />
+                            <Label
+                                Grid.Row="1"
+                                Text="{Binding Description}"
+                                TextColor="Gray" 
+                                HorizontalTextAlignment="Start" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>   
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add" Clicked="Add" HorizontalOptions="Center" CornerRadius="250" BackgroundColor="LightGoldenrodYellow" />
+    </StackLayout>
+
+</ContentPage>
